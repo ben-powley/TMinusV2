@@ -23,10 +23,7 @@
       <div v-for="site in activeLaunch.location.pads" :key="site.id">
         <p class="lead">{{site.name}}</p>
         <br />
-        <iframe
-          width="600"
-          height="450" :src="'https://www.google.com/maps/embed/v1/view?key=AIzaSyBAr0cP-H7noJiTEE8ilwX1O70kWL9KEqE&center=' + site.latitude + ',' + site.longitude + '&zoom=15&maptype=satellite'">
-        </iframe>
+        <iframe width="600" height="450" :src="'https://www.google.com/maps/embed/v1/view?key=AIzaSyBAr0cP-H7noJiTEE8ilwX1O70kWL9KEqE&center=' + site.latitude + ',' + site.longitude + '&zoom=15&maptype=satellite'"></iframe>
       </div>
     </div>
   </div>
