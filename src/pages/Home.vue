@@ -13,12 +13,14 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'home',
   computed: {
-    launches () {
-      return this.$store.getters.getNextLaunches
-    }
+    ...mapGetters({
+      launches: 'getNextLaunches'
+    })
   },
   mounted () {
     this.$store.dispatch('setLaunches')

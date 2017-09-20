@@ -5,9 +5,29 @@
       <div class="float-left">
         <router-link to="/"><i class="fa fa-chevron-left"></i> Back</router-link>
       </div>
-      <h2>Launch</h2>
+      <h2 class="text-center">{{activeLaunch.name}}</h2>
       <br>
-      {{activeLaunch}}
+      <h4><strong>Mission</strong></h4>
+      <div v-for="missions in activeLaunch.missions" :key="missions.id">
+        <p class="lead">{{missions.name}}</p>
+        <p>
+          {{missions.description}}
+        </p>
+      </div>
+      <h4><strong>Rocket</strong></h4>
+      <div>
+        {{activeLaunch.rocket.name}}
+      </div>
+      <br>
+      <h4><strong>Launch Site</strong></h4>
+      <div v-for="site in activeLaunch.location.pads" :key="site.id">
+        <p class="lead">{{site.name}}</p>
+        <br />
+        <iframe
+          width="600"
+          height="450" :src="'https://www.google.com/maps/embed/v1/view?key=AIzaSyBAr0cP-H7noJiTEE8ilwX1O70kWL9KEqE&center=' + site.latitude + ',' + site.longitude + '&zoom=15&maptype=satellite'">
+        </iframe>
+      </div>
     </div>
   </div>
 </template>
