@@ -13,6 +13,11 @@ export default new Router({
       component: Home
     },
     {
+      path: '/:offset',
+      name: 'Index with Offset',
+      component: Home
+    },
+    {
       path: '/launch/:id',
       name: 'Launch',
       component: Launch

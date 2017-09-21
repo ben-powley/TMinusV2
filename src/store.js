@@ -11,7 +11,7 @@ export default new Vuex.Store({
   },
   getters: {
     getNextLaunches (state) {
-      return state.launches.slice(0, 10)
+      return state.launches
     },
     getActiveLaunch (state) {
       return state.activeLaunch
@@ -26,8 +26,8 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    setLaunches (context) {
-      axios.get('https://launchlibrary.net/1.2/launch?next=99').then(response => {
+    setLaunches (context, params) {
+      axios.get(`https://launchlibrary.net/1.2/launch?next=${params.count}&offset=${params.offset}`).then(response => {
         context.commit('setLaunches', {
           launches: response.data.launches
         })

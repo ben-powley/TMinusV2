@@ -11,10 +11,14 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin-top: 60px;
+  body {
+    background: #f5f5f5;
+  }
+
+  #app {
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-top: 60px;
 }
 </style>

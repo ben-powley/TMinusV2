@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <i v-if="!shouldShow" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+    <i style="display: block; width: 30%; margin: 0px auto;" v-if="!shouldShow" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
     <div v-if="shouldShow">
       <div class="float-left">
         <router-link to="/"><i class="fa fa-chevron-left"></i> Back</router-link>
@@ -42,12 +42,13 @@ export default {
       return this.$store.getters.getActiveLaunch
     }
   },
-  mounted () {
+  created () {
     this.$store.dispatch('setActiveLaunch', this.$route.params.id)
-
-    setTimeout(() => {
+  },
+  watch: {
+    activeLaunch () {
       this.shouldShow = !this.shouldShow
-    }, 500)
+    }
   }
 }
 </script>
