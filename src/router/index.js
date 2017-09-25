@@ -22,8 +22,5 @@ export default new Router({
       name: 'Launch',
       component: Launch
     }
-  ],
-  scrollBehavior (to, from, savedPosition) {
-    return { x: 0, y: 0 }
-  }
+  ]
 })
