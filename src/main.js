@@ -5,6 +5,13 @@ import App from './App'
 import router from './router'
 import store from './store'
 
+import vueScrollBehavior from 'vue-scroll-behavior'
+
+Vue.use(vueScrollBehavior, {
+  router: router,
+  ignore: [/\//]
+})
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

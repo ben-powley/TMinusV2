@@ -42,7 +42,7 @@ export default {
   mounted () {
     this.$store.dispatch('setLaunches', {
       count: 10,
-      offset: this.$route.params.offset
+      offset: (this.$route.params.offset !== undefined) ? this.$route.params.offset : 0
     })
   },
   watch: {
@@ -53,7 +53,7 @@ export default {
         offset: to.params.offset
       })
       .then(result => {
-        this.offset = to.params.offset
+        this.offset = (to.params.offset !== undefined) ? to.params.offset : 0
       })
     },
     launches () {
